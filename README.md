@@ -2,6 +2,6 @@
 
 ## Tools
 
--Python
--DjangoREST
--JavaScript
+- Python
+- DjangoREST
+- JavaScript
