@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../../static/script/css/style_main.css">
+</head>
+
+<div>
+    <div class="book">
+        <div class="book-cover">
+            <div>
+                <h1>Find your destiny!</h1>
+                <div class="separator"></div>
+                <h2>By Lidia Khait and Vladlena Sotnikova</h2>
+            </div>
+        </div>
+        <div class="book-content">
+            <section>
+                <div id="formlogin">
+                    {%if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Logout</a>
+                    {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                        <div class="alert {% if message.tags %}alert-{{ message.tags }}" {% endif %}>
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                </div>
+                <div id="bybook">
+                    <button id="butbybook">Fortune By Book</button>
+                </div>
+                <div id="random"></div>
+            </section>
+            <div id="questions">
+                <form id="userquestion">
+                    <label for="question">Delphic oracle:</label><br>
+                    <input name="question" />
+                    <button type="submit" id="butrandom">I want to know</button>
+                </form>
+            </div>
+            <div id="statistic">
+                <button id="butstatistic">Most popular questions</button>
+            </div>
+            {%endif%}
+        </div>
+    </div>
+</div>
+
+<script src="../../static/script/script.js"></script>
+
+</body>
+
+</html>
